@@ -1,0 +1,14 @@
+E:\Applications\BiometricAuth\BiometricAuth\bin\BiometricAuth.dll.config
+E:\Applications\BiometricAuth\BiometricAuth\bin\BiometricAuth.dll
+E:\Applications\BiometricAuth\BiometricAuth\bin\BiometricAuth.pdb
+E:\Applications\BiometricAuth\BiometricAuth\bin\Newtonsoft.Json.dll
+E:\Applications\BiometricAuth\BiometricAuth\bin\System.Net.Http.Formatting.dll
+E:\Applications\BiometricAuth\BiometricAuth\bin\System.Web.Http.dll
+E:\Applications\BiometricAuth\BiometricAuth\bin\System.Web.Http.WebHost.dll
+E:\Applications\BiometricAuth\BiometricAuth\bin\Newtonsoft.Json.xml
+E:\Applications\BiometricAuth\BiometricAuth\bin\System.Net.Http.Formatting.xml
+E:\Applications\BiometricAuth\BiometricAuth\bin\System.Web.Http.xml
+E:\Applications\BiometricAuth\BiometricAuth\bin\System.Web.Http.WebHost.xml
+E:\Applications\BiometricAuth\BiometricAuth\obj\Debug\BiometricAuth.dll
+E:\Applications\BiometricAuth\BiometricAuth\obj\Debug\BiometricAuth.pdb
+E:\Applications\BiometricAuth\BiometricAuth\obj\Debug\BiometricAuth.csprojResolveAssemblyReference.cache

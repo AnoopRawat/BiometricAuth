@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Biometric Authentication Model</title>
+    <link href="css/gui.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div id="guilogo" style="background-color:black;width:470px">
+            <img src="images/logo.png" alt="Logo" width="250" />
+        </div>
+        <div id="guibuttons">
+            <ul class="guinav">
+                <li class="guicancel"><a href="login-1.html" title="Abort and navigate back to caller"></a></li>
+                <li class="guimirror"><button id="guimirror" title="Mirror the display of the captured images"></button></li>
+                <li class="guistart"><button id="guistart" title="Start the recording of images"></button></li>
+                <li><img id="micImg" src="images/mic.png" alt="mic" style="display:none;height:50px;width:50px"/></li>
+            </ul>
+        </div>
+        <div id="guititle">
+            <div class="guisubtitle"><strong>Biometric Processing</strong></div>
+        </div>
+        <div id="guidemo">
+            BioID WebService Interface
+        </div>
+    </header>
+    <main id="body">
+        <section id="guisplash">
+            <div id="guiprompt">
+                <p>This web page requires the HTML5 Media Capture and Streams API (getUserMedia(), as supported by the actual versions of Opera, Firefox and Chrome). You also have to grant access to your camera.</p>
+                <p>If the Media Capture API is not supported by your browser, a Silverlight module will be loaded to get access to your video capture device.</p>
+                <p id="guierror" class="guierror"></p>
+            </div>
+        </section>
+        <section id="guiapp" style="display:none">
+            <div id="guimessage" style="display:none"></div>
+            <canvas id="guicanvas"></canvas>
+            <div id="guisilverlight"></div>
+            <canvas id="guimotionbar"></canvas>
+            <div id="guiarrows" style="display:none">
+                <img class="toparrow" id="guiarrowup" src="images/up.png" width="128" height="128" alt="upward" title="look slightly upward..." style="display:none" />
+                <img class="leftarrow" id="guiarrowleft" src="images/left.png" width="128" height="128" alt="left" title="look a little bit to the left..." style="display:none" />
+                <img class="rightarrow" id="guiarrowright" src="images/right.png" width="128" height="128" alt="right" title="look a little bit to the right..." style="display:none" />
+                <img class="bottomarrow" id="guiarrowdown" src="images/down.png" width="128" height="128" alt="downward" title="look slightly downward..." style="display:none" />
+            </div>
+            <div id="guistatus">
+                <!-- up to max recordings (2-5 for enrollment) status images -->
+                <div class="guiimage" id="guiimage1" style="display:none">
+                    <div id="guiwait1" class="guiwait"></div>
+                    <div id="guiupload1" class="guiupload" style="display:none">Uploading...</div>
+                    <img id="guiuploaded1" src="~/Content/images/gui/upload.gif" style="display:none" />
+                </div>
+                <div class="guiimage" id="guiimage2" style="display:none">
+                    <div id="guiwait2" class="guiwait"></div>
+                    <div id="guiupload2" class="guiupload" style="display:none">Uploading...</div>
+                    <img id="guiuploaded2" src="~/Content/images/gui/upload.gif" style="display:none" />
+                </div>
+                <div class="guiimage" id="guiimage3" style="display:none">
+                    <div id="guiwait3" class="guiwait"></div>
+                    <div id="guiupload3" class="guiupload" style="display:none">Uploading...</div>
+                    <img id="guiuploaded3" src="~/Content/images/gui/upload.gif" style="display:none" />
+                </div>
+                <div class="guiimage" id="guiimage4" style="display:none">
+                    <div id="guiwait4" class="guiwait"></div>
+                    <div id="guiupload4" class="guiupload" style="display:none">Uploading...</div>
+                    <img id="guiuploaded4" src="~/Content/images/gui/upload.gif" style="display:none" />
+                </div>
+                <div class="guiimage" id="guiimage5" style="display:none">
+                    <div id="guiwait5" class="guiwait"></div>
+                    <div id="guiupload5" class="guiupload" style="display:none">Uploading...</div>
+                    <img id="guiuploaded5" src="~/Content/images/gui/upload.gif" style="display:none" />
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script src="js/biometric-login.js"></script>
+    <script src="js/bws.capture.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/font.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui-1.9.2.custom.css" rel="stylesheet" type="text/css" />
+
+    <!-- Modal -->
+    <div class="modal fade" id="myBioIDLoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;border-color:black">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="window.location.href = 'biometricLogIn.html'">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Authentication Failed</h4>
+                </div>
+                <div class="modal-body">
+                    Your BiometricID Verification failed. Logging out !!
+                </div>
+                <div class="modal-footer">
+                    <button style="margin-top:20px" type="button" class="btn btn-primary" id="myBioIDLoginBtn">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

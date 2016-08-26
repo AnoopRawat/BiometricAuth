@@ -1,0 +1,454 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Austrian Global Bank</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="fonts/font.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.bxslider.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+    <!-- <script type="text/javascript" src="js/modernizr.js"></script> -->
+    <script type="text/javascript">
+        $('document').ready(function () {
+            $('.market-list li a').click(function () {
+                $('.market-list a').removeClass('active');
+                $(this).addClass('active');
+                var currenttab = $(this).attr('href');
+                $('.tab-container > figure').slideUp();
+                $(currenttab).slideDown();
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- socila icon -->
+    <ul class="social-icon">
+        <li class="facebook"><a href="javascript:void(0)">Facebook</a></li>
+        <li class="twitter"><a href="javascript:void(0)">Twitter</a></li>
+        <li class="linked-in"><a href="javascript:void(0)">Linkedin</a></li>
+        <li class="chat"><a href="javascript:void(0)">Chat</a></li>
+        <li class="video-chat"><a href="javascript:void(0)">Video Chat</a></li>
+    </ul>
+    <!-- header starts here -->
+    <header>
+        <section class="header">
+            <div class="wrapper">
+                <a href="index.html" class="logo"><img src="images/logo.png" alt="logo" title="logo" /></a>
+                <div class="right-header">
+                    <div class="top-head">
+                        <a href="login-1.html" class="login">Logout</a> <a href="javascript:void(0)" class="language">English</a>
+                        <ul class="language-list">
+                            <li><a href="javascript:void(0)">German</a></li>
+                        </ul>
+                    </div>
+                    <nav>
+                        <span class="menu-link"></span>
+                        <ul class="menu">
+                            <li>
+                                <a href="javascript:void(0)">DASHBOARD</a>
+                                <div class="sub-nav">
+                                    <ul>
+                                        <li><a href="index.html">My View</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Personalized View</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Accounts</a>
+                                <div class="sub-nav">
+                                    <ul>
+                                        <li>
+                                            <figure><img src="images/megamenu-icon1.png" alt="megamenu-icon1" title="megamenu-icon1" /></figure>
+                                        </li>
+                                        <li><a href="javascript:void(0)">Account Summary</a></li>
+                                        <li><a href="transaction-account.html">Transaction Histroy</a></li>
+                                        <li><a href="javascript:void(0)">E-Statements</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <figure><img src="images/megamenu-icon2.png" alt="megamenu-icon2" title="megamenu-icon2" /></figure>
+                                        </li>
+                                        <li><a href="javascript:void(0)">Savings</a></li>
+                                        <li><a href="giro.html">Giro Accounts</a></li>
+                                        <li><a href="javascript:void(0)">Current Accounts</a></li>
+                                        <li><a href="javascript:void(0)">Building Savings</a></li>
+                                        <li><a href="term-deposit.html">Term Deposits</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <figure><img src="images/megamenu-icon3.png" alt="megamenu-icon3" title="megamenu-icon3" /></figure>
+                                        </li>
+                                        <li><a href="javascript:void(0)">Financing</a></li>
+                                        <li><a href="javascript:void(0)">Credit Cards</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Payments</a>
+                                <div class="sub-nav">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Domestic Transfer</a></li>
+                                        <li><a href="javascript:void(0)">International Transfer</a></li>
+                                        <li><a href="javascript:void(0)">Transfer between own accounts</a></li>
+                                        <li><a href="transfer-step-1.html">Pay a Registered Payee</a></li>
+                                        <li><a href="addPayee.html">Add Payee</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Standing Order</a></li>
+                                        <li><a href="javascript:void(0)">SEPA Direct Debit</a></li>
+                                        <li><a href="javascript:void(0)">Order Status</a></li>
+                                        <li><a href="issueChequeBook.html">Issue ChequeBook </a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Signature file</a></li>
+                                        <li><a href="javascript:void(0)">My Templates</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="active">Investments</a>
+                                <div class="sub-nav">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Insurance &amp; Pensions</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Mutual Funds</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="security-trading.html">Security Trading</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="my-product-1.html">Products</a></li>
+                            <li class="last">
+                                <a href="javascript:void(0)">Customer Support</a>
+                                <div class="sub-nav">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Service Request</a></li>
+                                        <li><a href="javascript:void(0)">Book Appointment</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Video call/ chat/ call</a></li>
+                                        <li><a href="javascript:void(0)">Application form</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Rate Inquiry </a></li>
+                                        <li><a href="javascript:void(0)">Session Summary report </a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" id="start_button" onclick="startDictation(event)">Voice Search</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </header>
+    <!-- header ends here -->
+    <!-- collapse user detail starts here -->
+    <div class="collapse-section">
+        <article class="wrapper">
+            <strong class="collase-icon"></strong>
+            <article class="open-detail">
+                <div class="profile-detail">
+                    <figure class="profile-pic"> <img src="images/profile-pic.png" alt="profile-pic" title="profile-pic" /> </figure>
+                    <div class="user-detail"> <span>Welcome</span> <strong>Andreas Treichl</strong> <em>My Profile</em> </div>
+                </div>
+                <ul class="notifications">
+                    <li>
+                        <a href="transfer-step-1.html">
+                            <figure> <img src="images/transaction-icon.png" alt="Transfer" title="Transfer" /> </figure>
+                            <span>Transfer</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <figure> <img src="images/alert-icon.png" alt="Alert" title="Alert" /> </figure>
+                            <span>5 Alerts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <figure> <img src="images/mail-icon.png" alt="Mail" title="Mail" /> </figure>
+                            <span>1 Email</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <figure> <img src="images/other-icon.png" alt="Others" title="Others" /> </figure>
+                            <span>Others</span>
+                        </a>
+                    </li>
+                    </a>
+                    </li>
+                </ul>
+                <ul class="login-detail">
+                    <li> <span>Last Login</span> <span>16/09/14,  04:13:22</span> </li>
+                    <li> <span>Last Failed Login</span> <span>10/09/14,  04:13:22</span> </li>
+                </ul>
+            </article>
+        </article>
+    </div>
+    <!-- collapse user detail ends here -->
+    <!-- container starts here -->
+    <article class="container">
+        <div class="wrapper">
+            <ul class="bredcum">
+                <li><a href="index.html">Investments</a></li>
+                <li><a href="javascript:void(0)">Security Trading</a></li>
+                <li>Order Placements</li>
+            </ul>
+            <div class="inner-container">
+                <span class="right-side-link"><img src="images/right-section-link.png" /></span>
+                <!-- left section starts here -->
+                <div class="left-section">
+                    <div class="finance-block content-block">
+                        <h3> <strong>Order Placements</strong> </h3>
+                        <div class="order-pacement transfer-detail">
+                            <ul>
+                                <li>
+                                    <label>Select Account</label>
+                                    <select>
+                                        <option>ABC,A72400118000000001B, EUR 234.00,00</option>
+                                        <option>ABC,A72400118000000001C, EUR 454.00,00</option>
+                                        <option>ABC,A72400118000000001D, EUR 574.00,00</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label>Order Type</label>
+                                    <select name="select" class="small-select">
+                                        <option>Buy</option>
+                                        <option>Sell</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label>Product</label>
+                                    <select class="small-select">
+                                        <option>Stocks</option>
+                                        <option>Mutual Funds</option>
+                                        <option>Bonds</option>
+                                    </select>
+                                </li>
+                            </ul>
+                            <div class="security-search content-block">
+                                <h3>
+                                    <strong>Security Search</strong>
+                                    <figure class="collapse-link"></figure>
+                                </h3>
+                                <div class="search-content order-pacement">
+                                    <ul class="search-options">
+                                        <li class="isin">
+                                            <label>ISIN</label>
+                                            <input type="text" name="" value="AT0000603709" />
+                                        </li>
+                                        <li class="title">
+                                            <label>Title</label>
+                                            <input type="text" name="" value="AGRANA BET.AG STAMM.O.N." />
+                                        </li>
+                                        <li class="exchange">
+                                            <label>Exchange</label>
+                                            <select>
+                                                <option>Select</option>
+                                            </select>
+                                        </li>
+                                        <li class="s-btn">
+                                            <input type="button" name="" value="SEARCH" class="primary-button" />
+                                        </li>
+                                    </ul>
+                                    <table class="finance-table difference-table">
+                                        <tr>
+                                            <th><a class="sort desc" href="javascript:void(0)">Title</a></th>
+                                            <th><a class="sort" href="javascript:void(0)">ISIN</a></th>
+                                            <th><a class="sort" href="javascript:void(0)">Type</a></th>
+                                            <th><a class="sort" href="javascript:void(0)">Exchange</a></th>
+                                            <th><a class="sort" href="javascript:void(0)">Price</a></th>
+                                            <th>Action</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Agrana Bet. AG</td>
+                                            <td>AT0000603709</td>
+                                            <td>Stock</td>
+                                            <td>WIEN</td>
+                                            <td>EUR 81,00</td>
+                                            <td class="table-btn"><input type="button" name="" value="DESELECT" class="secondary-button" onclick="location.href='order-placement-step-1.html'" /></td>
+                                        </tr>
+                                    </table>
+                                    <ul class="list">
+                                        <li>
+                                            <label>Quantity</label>
+                                            <input type="text" name="" value="" />
+                                        </li>
+                                        <li>
+                                            <label>Order Type</label>
+                                            <select>
+                                                <option>None</option>
+                                                <option>Limit</option>
+                                                <option>Market</option>
+                                                <option>Stop order</option>
+                                            </select>
+                                        </li>
+                                        <li>
+                                            <label>Limit</label>
+                                            <input type="text" name="" value="" />
+                                        </li>
+                                        <li>
+                                            <label>Validity</label>
+                                            <input type="text" name="" value="20/09/14" />
+                                        </li>
+                                        <li>
+                                            <label>Execution Restrictions</label>
+                                            <select>
+                                                <option>None</option>
+                                                <option>Fill or kill</option>
+                                                <option>Immediate or cancel</option>
+                                            </select>
+                                        </li>
+                                        <li>
+                                            <label>Trading Restrictions</label>
+                                            <select>
+                                                <option>Opening auction</option>
+                                                <option>Closing auction</option>
+                                            </select>
+                                        </li>
+                                        <li>
+                                            <label>&nbsp;</label>
+                                            <input type="button" class="primary-button" value="GENERATE TAC" name="">
+                                        </li>
+                                        <li>
+                                            <label>Enter Your TAC</label>
+                                            <input type="text" name="" value="" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-block">
+                            <ul>
+                                <li><a href="javascript:void(0)">Risk References</a></li>
+                                <li><a href="javascript:void(0)">Execution Policy</a></li>
+                                <li><a href="javascript:void(0)">Fee</a></li>
+                                <li><a href="javascript:void(0)">Stock Exchange Info</a></li>
+                            </ul>
+                            <input type="button" name="" value="CONTINUE" class="primary-button" />
+                            <input type="button" name="" value="CLEAR ALL" class="secondary-button" />
+                        </div>
+                    </div>
+                </div>
+                <!-- left section ends here -->
+                <!-- right section starts here -->
+                <aside>
+                    <div class="right-section">
+                        <!--offers start here -->
+                        <div class="market content-block">
+                            <h3>
+                                <strong>Market View</strong>
+                                <ul class="setting-option">
+                                    <li class="collapse-arrow"></li>
+                                    <li class="setting-link"></li>
+                                </ul>
+                            </h3>
+                            <div class="market-view hide-section">
+                                <ul class="market-list">
+                                    <li><a href="#tab1">ATX</a></li>
+                                    <li><a href="#tab2">ATX Pime</a></li>
+                                    <li><a href="#tab3">CECE</a></li>
+                                    <li><a href="#tab4" class="active">RDX</a></li>
+                                </ul>
+                                <div class="tab-container">
+                                    <figure id="tab1" class="tab-content"> <img src="images/market-view.jpg" alt="market-view" title="market-view" /> </figure>
+                                    <figure id="tab2" class="tab-content"> <img src="images/market-view.jpg" alt="market-view" title="market-view" /> </figure>
+                                    <figure id="tab3" class="tab-content"> <img src="images/market-view.jpg" alt="market-view" title="market-view" /> </figure>
+                                    <figure id="tab4" class="tab-content"> <img src="images/market-view.jpg" alt="market-view" title="market-view" /> </figure>
+                                </div>
+                                <div class="news-section">
+                                    <h4>News</h4>
+                                    <ul class="news-list">
+                                        <li><strong>02/09/2014 </strong>- BUWOG: New Stock in the ATX</li>
+                                        <li><strong>02/07/014</strong> - Vienna Stock Exchange: EUR 3.1 billion in capital raised in 1HY 2014</li>
+                                        <li><strong>25/06/2014</strong> - FACC starts trading on the Vienna Stock Exchange</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- instant pay start here -->
+                        <div class="market content-block">
+                            <h3>
+                                <strong>Top Stocks</strong>
+                                <ul class="setting-option">
+                                    <li class="collapse-arrow"></li>
+                                    <li class="setting-link"></li>
+                                </ul>
+                            </h3>
+                            <div class="market-view hide-section">
+                                <ul class="stock-list">
+                                    <li> <span>CWI</span> <strong class="positive">+1.77</strong> </li>
+                                    <li> <span>VER</span> <strong class="positive">+1.49</strong> </li>
+                                    <li> <span>VIG</span> <strong class="negative">-0.51</strong> </li>
+                                    <li> <span>SBO</span> <strong class="positive">+0.59</strong> </li>
+                                    <li> <span>WIE</span> <strong class="negative">-0.49</strong> </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Quick links start here -->
+                        <div class="quick-links content-block">
+                            <h3>
+                                <strong>Advisory</strong>
+                                <ul class="setting-option">
+                                    <li class="collapse-arrow"></li>
+                                    <li class="setting-link"></li>
+                                </ul>
+                            </h3>
+                            <ul class="quick-link-list hide-section">
+                                <li><a href="javascript:void(0)">Expert advice</a></li>
+                                <li><a href="javascript:void(0)">Research report</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- right section ends here -->
+                </aside>
+            </div>
+        </div>
+        </div>
+    </article>
+    <!-- container ends here -->
+    <!-- footer start here -->
+    <footer>
+        <section class="footer">
+            <article class="wrapper">
+                <ul class="footer-links">
+                    <li><a href="javascript:void(0)">About Us</a></li>
+                    <li><a href="javascript:void(0)">Email Us</a></li>
+                    <li><a href="javascript:void(0)">24 X 7 Customer Care</a></li>
+                    <li><a href="javascript:void(0)">Find ATM / Branch</a></li>
+                    <li><a href="javascript:void(0)">View Demo</a></li>
+                    <li><a href="javascript:void(0)">Compliments and Complaints</a></li>
+                    <li><a href="javascript:void(0)">Help</a></li>
+                </ul>
+                <div class="footer-logo">
+                    <figure><img src="images/footer-logo.png" alt="footer-logo" title="footer-logo" /></figure>
+                    <span>© Austrian Global Bank</span>
+                </div>
+            </article>
+        </section>
+    </footer>
+    <!-- mobile fixed footer -->
+    <div class="footer-right-fixed">
+        <ul>
+            <li> <a href="javascript:void(0)"> <img src="images/my-offers.png" alt="my-offers" title="my-offers" /> <span>My Offers</span> </a> </li>
+            <li class="pay"><a href="javascript:void(0)"><img src="images/quick-pay.png" alt="quick-pay" title="quick-pay" /> <span>Quick Pay</span></a></li>
+            <li><a href="javascript:void(0)"><img src="images/calender.png" alt="calender" title="calender" /> <span>Calendar</span></a></li>
+            <li><a href="javascript:void(0)"><img src="images/my-shortcuts.png" alt="my-shortcuts" title="my-shortcuts" /> <span>My Shortcuts</span></a></li>
+            <li><a href="javascript:void(0)"><img src="images/video-chat.png" alt="video-chat" title="video-chat" /> <span>Video Chat</span></a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,786 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Austrian Global Bank</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="fonts/font.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.bxslider.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="css/labs.css"  rel="stylesheet" type="text/css"/> -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="js/labs.js"></script>
+    <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+    <!-- <script type="text/javascript" src="js/modernizr.js"></script> -->
+    <script type="text/javascript">
+        $(function () {
+            var accountList = [], testField = '<li><span>##</span><small></small></li>', $compareListBlock = $(".compareListBlock");
+
+
+            $('.accout-links input[type=checkbox]').on("change", function (e) {
+                var a = $(this).closest(".account-type").children('strong').html();
+                if (this.checked) {
+                    accountList.push(a);
+                    if (accountList.length == 1) {
+                        $compareListBlock.html('<div class="inner"><h3><strong>Compare List</strong></h3><ul></ul><p><em id="clearAll">Clear</em><a id="compareProd">Compare</a></p></div>');
+                    }
+                }
+                else {
+                    accountList.splice(accountList.indexOf(a), 1);
+                }
+                if (accountList.length) {
+                    $compareListBlock.find("ul").html(accountList.map(function (o) { return testField.replace("##", o); }).join(""));
+                }
+                else {
+                    $compareListBlock.empty();
+                }
+
+            });
+
+            $compareListBlock.on('click', 'small', function () {
+                var $el = $(this), $li = $el.parent(), $p = $li.closest("ul"), a = $el.prev().html().trim();
+                $(".account-type").filter(function (i, e) {
+                    if ($(e).children("strong").html().trim() == a) {
+                        $(e).children(".accout-links").children("li.last").find("input").prop("checked", false);
+                    }
+                    return false;
+                });
+                if ($p.children("li").length < 2) {
+                    $p.closest(".inner").remove();
+                    accountList.length = 0;
+                }
+                else {
+                    accountList.splice(accountList.indexOf(a), 1);
+                    $li.remove();
+                }
+            });
+            $compareListBlock.on('click', '#clearAll', function () {
+                var $el = $(this);
+                $(".account-type").filter(function (i, e) {
+                    $(e).children(".accout-links").children("li.last").find("input").prop("checked", false);
+                    return false;
+                });
+                $el.closest(".inner").remove();
+                accountList.length = 0;
+            });
+
+            $compareListBlock.on('click', '#compareProd', function () {
+                $(".account-type").children(".accout-links").children("li.last").find("input").prop("checked", false);
+                window.location.href = "my-product-2.html?data=" + accountList;
+            });
+
+
+        });
+
+    </script>
+</head>
+<body>
+    <!-- social icon -->
+    <ul class="social-icon">
+        <li class="facebook"><a href="javascript:void(0)">Facebook</a></li>
+        <li class="twitter"><a href="javascript:void(0)">Twitter</a></li>
+        <li class="linked-in"><a href="javascript:void(0)">Linkedin</a></li>
+        <li class="chat"><a href="javascript:void(0)">Chat</a></li>
+        <li class="video-chat"><a href="javascript:void(0)">Video Chat</a></li>
+    </ul>
+    <!-- header starts here -->
+    <header>
+        <section class="header">
+            <div class="wrapper">
+                <a href="index.html" class="logo"><img src="images/logo.png" alt="logo" title="logo" /></a>
+                <div class="right-header">
+                    <div class="top-head">
+                        <a href="login-1.html" class="login">Logout</a>
+                        <a href="javascript:void(0)" class="language">English</a>
+                        <ul class="language-list">
+                            <li><a href="javascript:void(0)">German</a></li>
+                        </ul>
+                    </div>
+                    <nav>
+                        <span class="menu-link"></span>
+                        <ul class="menu">
+                            <li>
+                                <a href="javascript:void(0)">DASHBOARD</a>
+                                <div class="sub-nav">
+                                    <ul>
+                                        <li><a href="index.html">My View</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Personalized View</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Accounts</a>
+                                <div class="sub-nav">
+                                    <ul>
+                                        <li><figure><img src="images/megamenu-icon1.png" alt="megamenu-icon1" title="megamenu-icon1" /></figure></li>
+                                        <li><a href="javascript:void(0)">Account Summary</a></li>
+                                        <li><a href="transaction-account.html">Transaction Histroy</a></li>
+                                        <li><a href="javascript:void(0)">E-Statements</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><figure><img src="images/megamenu-icon2.png" alt="megamenu-icon2" title="megamenu-icon2" /></figure></li>
+                                        <li><a href="javascript:void(0)">Savings</a></li>
+                                        <li><a href="giro.html">Giro Accounts</a></li>
+                                        <li><a href="javascript:void(0)">Current Accounts</a></li>
+                                        <li><a href="javascript:void(0)">Building Savings</a></li>
+                                        <li><a href="term-deposit.html">Term Deposits</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><figure><img src="images/megamenu-icon3.png" alt="megamenu-icon3" title="megamenu-icon3" /></figure></li>
+                                        <li><a href="javascript:void(0)">Financing</a></li>
+                                        <li><a href="javascript:void(0)">Credit Cards</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Payments</a>
+                                <div class="sub-nav">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Domestic Transfer</a></li>
+                                        <li><a href="javascript:void(0)">International Transfer</a></li>
+                                        <li><a href="javascript:void(0)">Transfer Between Own Accounts</a></li>
+                                        <li><a href="transfer-step-1.html">Pay a Registered Payee</a></li>
+                                        <li><a href="addPayee.html">Add Payee</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Standing Order</a></li>
+                                        <li><a href="javascript:void(0)">SEPA Direct Debit</a></li>
+                                        <li><a href="javascript:void(0)">Order Status</a></li>
+                                        <li><a href="issueChequeBook.html">Issue ChequeBook </a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Signature File</a></li>
+                                        <li><a href="javascript:void(0)">My Templates</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Investments</a>
+                                <div class="sub-nav">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Insurance &amp; Pensions</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Mutual Funds</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="security-trading.html">Security Trading</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="my-product-1.html" class="active">Products</a></li>
+                            <li class="last">
+                                <a href="javascript:void(0)">Customer Support</a>
+                                <div class="sub-nav">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Service Request</a></li>
+                                        <li><a href="javascript:void(0)">Book Appointment</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Video Call/ Chat/ Call</a></li>
+                                        <li><a href="javascript:void(0)">Application Form</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Rate Inquiry </a></li>
+                                        <li><a href="javascript:void(0)">Session Summary Report </a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" id="start_button" onclick="startDictation(event)">Voice Search</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </header>
+    <!-- header ends here -->
+    <!-- collapse user detail starts here -->
+    <div class="collapse-section">
+        <article class="wrapper">
+            <strong class="collase-icon"></strong>
+            <article class="open-detail">
+                <div class="profile-detail">
+                    <figure class="profile-pic">
+                        <img src="images/profile-pic.png" alt="profile-pic" title="profile-pic" />
+                    </figure>
+                    <div class="user-detail">
+                        <span>Welcome</span>
+                        <strong>Andreas Treichl</strong>
+                        <a href="javascript:void(0)"><em>My Profile</em></a>
+                    </div>
+                </div>
+                <ul class="notifications">
+                    <li>
+                        <a href="transfer-step-1.html">
+                            <figure> <img src="images/transaction-icon.png" alt="Transfer" title="Transfer" /> </figure>
+                            <span>Transfer</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <figure>
+                                <img src="images/alert-icon.png" alt="Alert" title="Alert" />
+                            </figure>
+                            <span>5 Alerts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <figure>
+                                <img src="images/mail-icon.png" alt="Mail" title="Mail" />
+                            </figure>
+                            <span>1 Email</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <figure>
+                                <img src="images/other-icon.png" alt="Others" title="Others" />
+                            </figure>
+                            <span>Others</span>
+                        </a>
+                    </li>
+                    </a></li>
+                </ul>
+                <ul class="login-detail">
+                    <li>
+                        <span>Last Login</span>
+                        <span>16/09/14,  04:13:22</span>
+                    </li>
+                    <li>
+                        <span>Last Failed Login</span>
+                        <span>10/09/14,  04:13:22</span>
+                    </li>
+                </ul>
+            </article>
+        </article>
+    </div>
+    <!-- collapse user detail ends here -->
+    <!-- container starts here -->
+    <article class="container">
+        <div class="wrapper">
+            <ul class="bredcum">
+                <li>Products</li>
+            </ul>
+            <div class="inner-container">
+                <span class="right-side-link"><img src="images/right-section-link.png" /></span>
+                <!-- left section starts here -->
+                <div class="right-section my-offer">
+                    <div class="compare-block content-block">
+                        <div class="compareListBlock">
+                        </div>
+                        <h3>
+                            <strong>Product Type</strong>
+                        </h3>
+                        <ul class="product-type-list">
+                            <li>
+                                <label><input type="radio" name="radio1" value="" checked="checked" />Accounts</label>
+                            </li>
+                            <li>
+                                <label><input type="radio" name="radio1" value="" />Financing</label>
+                            </li>
+                            <li>
+                                <label><input type="radio" name="radio1" value="" />Investments</label>
+                            </li>
+                            <li>
+                                <label><input type="radio" name="radio1" value="" />Cards</label>
+                            </li>
+                        </ul>
+
+                        <h3>
+                            <strong>Family Type</strong>
+                        </h3>
+                        <ul class="product-type-list">
+                            <li>
+                                <label><input type="checkbox" name="" value="" checked="checked" />Child</label>
+                            </li>
+                            <li>
+                                <label><input type="checkbox" name="" value="" checked="checked" />Spouse</label>
+                            </li>
+                            <li>
+                                <label><input type="checkbox" name="" value="" checked="checked" />Parents</label>
+                            </li>
+                            <li>
+                                <label><input type="checkbox" name="" value="" checked="checked" />For me</label>
+                            </li>
+                        </ul>
+                        <input type="button" name="" value="SEARCH" class="primary-button padding serach-btn" />
+                    </div>
+                </div>
+                <!-- left section ends here -->
+                <!-- right section starts here -->
+                <div class="left-section my-offer">
+                    <div class="account-block content-block">
+                        <h3>
+                            <strong>Accounts</strong>
+                            <span class="number-of-product">We have<strong>3</strong>product offerings for you</span>
+                        </h3>
+                        <div class="account-content">
+                            <div class="account-type">
+                                <strong class="hi">Basic Account</strong>
+                                <ul class="account-list">
+                                    <li>
+                                        <label>Child</label>
+                                        <ul class="rating">
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label>Spouse</label>
+                                        <ul class="rating">
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label>Parents</label>
+                                        <ul class="rating">
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label>For me</label>
+                                        <ul class="rating">
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="accout-links">
+                                    <li><input type="button" name="" value="DETAILS" class="primary-button" /></li>
+                                    <li><input type="button" name="" value="APPLY" class="primary-button" /></li>
+                                    <li class="last"><label><input name="" type="checkbox" value="compare1" id="chkBasic" />Compare</label></li>
+                                </ul>
+                            </div>
+                            <div class="account-type right">
+                                <strong>Premium Account</strong>
+                                <ul class="account-list">
+                                    <li>
+                                        <label>Child</label>
+                                        <ul class="rating">
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label>Spouse</label>
+                                        <ul class="rating">
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label>Parents</label>
+                                        <ul class="rating">
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label>For me</label>
+                                        <ul class="rating">
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="accout-links">
+                                    <li><input type="button" name="" value="DETAILS" class="primary-button" /></li>
+                                    <li><input type="button" name="" value="APPLY" class="primary-button" /></li>
+                                    <li class="last"><label><input name="" type="checkbox" value="compare2" id="chkPremium" />Compare</label></li>
+                                </ul>
+                            </div>
+                            <div class="account-type">
+                                <strong>Certificates of Deposit</strong>
+                                <ul class="account-list">
+                                    <li>
+                                        <label>Child</label>
+                                        <ul class="rating">
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label>Spouse</label>
+                                        <ul class="rating">
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label>Parents</label>
+                                        <ul class="rating">
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label>For me</label>
+                                        <ul class="rating">
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-on.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="images/star-off.png" alt="star" title="star" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="accout-links">
+                                    <li><input type="button" name="" value="DETAILS" class="primary-button" /></li>
+                                    <li><input type="button" name="" value="APPLY" class="primary-button" /></li>
+                                    <li class="last"><label><input type="checkbox" name="" value="compare3" id="chkDeposit" />Compare</label></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="bottom-block">
+                            <input type="button" name="" value="Compare Products" class="primary-button" onclick="location.href='my-product-2.html'" />
+                        </div>
+                    </div>
+                </div>
+                <!-- right section ends here -->
+            </div>
+            </aside>
+        </div>
+    </article>
+    <!-- container ends here -->
+    <!-- footer start here -->
+    <footer>
+        <section class="footer">
+            <article class="wrapper">
+                <ul class="footer-links">
+                    <li><a href="javascript:void(0)">About Us</a></li>
+                    <li><a href="javascript:void(0)">Email Us</a></li>
+                    <li><a href="javascript:void(0)">24 X 7 Customer Care</a></li>
+                    <li><a href="javascript:void(0)">Find ATM / Branch</a></li>
+                    <li><a href="javascript:void(0)">View Demo</a></li>
+                    <li><a href="javascript:void(0)">Compliments and Complaints</a></li>
+                    <li><a href="javascript:void(0)">Help</a></li>
+                </ul>
+                <div class="footer-logo">
+                    <figure><img src="images/footer-logo.png" alt="footer-logo" title="footer-logo" /></figure>
+                    <span>© Austrian Global Bank</span>
+
+                </div>
+            </article>
+        </section>
+    </footer>
+    <!-- mobile fixed footer -->
+    <div class="footer-right-fixed">
+        <ul>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="images/my-offers.png" alt="my-offers" title="my-offers" />
+                    <span>My Offers</span>
+                </a>
+            </li>
+            <li class="pay">
+                <a href="javascript:void(0)">
+                    <img src="images/quick-pay.png" alt="quick-pay" title="quick-pay" />
+                    <span>Quick Pay</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="images/calender.png" alt="calender" title="calender" />
+                    <span>Calendar</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="images/my-shortcuts.png" alt="my-shortcuts" title="my-shortcuts" />
+                    <span>My Shortcuts</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="images/video-chat.png" alt="video-chat" title="video-chat" />
+                    <span>Video Chat</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>

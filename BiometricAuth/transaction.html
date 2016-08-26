@@ -1,0 +1,458 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Austrian Global Bank</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="fonts/font.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui-1.9.2.custom.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.datepicker.js"></script>
+    <!-- <script type="text/javascript" src="js/modernizr.js"></script> -->
+    <script type="text/javascript">
+        $('document').ready(function () {
+            $("#sortable").sortable();
+            $('#datepicker').datepicker();
+            $('#datepicker').datepicker("setDate", "00/3/0000");
+            $(".dates").datepicker({
+                showOn: "button",
+                dateFormat: 'dd/mm/yyyy',
+                buttonImage: "images/calender-web.png",
+                buttonImageOnly: true,
+                buttonText: "Select date"
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="overlay"></div>
+    <!-- pop up -->
+    <div class="popup1">
+        <a href="javascript:void(0)" class="close"></a>
+        <div class="instant-block hide-section">
+            <h5>Select Account</h5>
+            <select>
+                <option>AT204001180000000000018</option>
+                <option>AT204001180000000000019</option>
+            </select>
+            <h5>Payee</h5>
+            <select>
+                <option>Credit Card Bill</option>
+                <option>Mobile Bill</option>
+            </select>
+            <h5>Amount</h5>
+            <input type="text" name="" value="EUR 3.000,00" />
+            <ul class="popup-list">
+                <li>
+                    <label>&nbsp;</label>
+                    <input type="button" class="primary-button" value="GENERATE TAC" name="">
+                </li>
+                <li class="date">
+                    <label>
+                        <h5>Enter Your TAC</h5>
+                    </label>
+                    <input type="text" value="" name="">
+                </li>
+            </ul>
+            <ul class="buttons">
+                <li>
+                    <input type="button" name="" value="PAY" class="primary-button" />
+                </li>
+                <li>
+                    <input type="button" name="" value="RESET" class="secondary-button" />
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- socila icon -->
+    <ul class="social-icon">
+        <li class="facebook"><a href="javascript:void(0)">Facebook</a></li>
+        <li class="twitter"><a href="javascript:void(0)">Twitter</a></li>
+        <li class="linked-in"><a href="javascript:void(0)">Linkedin</a></li>
+        <li class="chat"><a href="javascript:void(0)">Chat</a></li>
+        <li class="video-chat"><a href="javascript:void(0)">Video Chat</a></li>
+    </ul>
+    <!-- header starts here -->
+    <header>
+        <section class="header">
+            <div class="wrapper">
+                <a href="index.html" class="logo"><img src="images/logo.png" alt="logo" title="logo" /></a>
+                <div class="right-header">
+                    <div class="top-head">
+                        <a href="login-1.html" class="login">Logout</a> <a href="javascript:void(0)" class="language">English</a>
+                        <ul class="language-list">
+                            <li><a href="javascript:void(0)">German</a></li>
+                        </ul>
+                    </div>
+                    <nav>
+                        <span class="menu-link"></span>
+                        <ul class="menu">
+                            <li>
+                                <a href="index.html" class="active">DASHBOARD</a>
+                                <div class="sub-nav">
+                                    <ul>
+                                        <li><a href="index.html">My View</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Personalized View</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Accounts</a>
+                                <div class="sub-nav">
+                                    <ul>
+                                        <li>
+                                            <figure><img src="images/megamenu-icon1.png" alt="megamenu-icon1" title="megamenu-icon1" /></figure>
+                                        </li>
+                                        <li><a href="javascript:void(0)">Account Summary</a></li>
+                                        <li><a href="transaction-account.html">Transaction Histroy</a></li>
+                                        <li><a href="javascript:void(0)">E-Statements</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <figure><img src="images/megamenu-icon2.png" alt="megamenu-icon2" title="megamenu-icon2" /></figure>
+                                        </li>
+                                        <li><a href="javascript:void(0)">Savings</a></li>
+                                        <li><a href="giro.html">Giro Accounts</a></li>
+                                        <li><a href="javascript:void(0)">Current Accounts</a></li>
+                                        <li><a href="javascript:void(0)">Building Savings</a></li>
+                                        <li><a href="term-deposit.html">Term Deposits</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <figure><img src="images/megamenu-icon3.png" alt="megamenu-icon3" title="megamenu-icon3" /></figure>
+                                        </li>
+                                        <li><a href="javascript:void(0)">Financing</a></li>
+                                        <li><a href="javascript:void(0)">Credit Cards</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Payments</a>
+                                <div class="sub-nav">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Domestic Transfer</a></li>
+                                        <li><a href="javascript:void(0)">International Transfer</a></li>
+                                        <li><a href="javascript:void(0)">Transfer between own accounts</a></li>
+                                        <li><a href="transfer-step-1.html">Pay a Registered Payee</a></li>
+                                        <li><a href="addPayee.html">Add Payee</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Standing Order</a></li>
+                                        <li><a href="javascript:void(0)">SEPA Direct Debit</a></li>
+                                        <li><a href="javascript:void(0)">Order Status</a></li>
+                                        <li><a href="issueChequeBook.html">Issue ChequeBook </a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Signature file</a></li>
+                                        <li><a href="javascript:void(0)">My Templates</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Investments</a>
+                                <div class="sub-nav">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Insurance & Pensions</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Mutual Funds</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="security-trading.html">Security Trading</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="my-product-1.html">Products</a></li>
+                            <li class="last">
+                                <a href="javascript:void(0)">Customer Support</a>
+                                <div class="sub-nav">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Service Request</a></li>
+                                        <li><a href="javascript:void(0)">Book Appointment</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Video call/ chat/ call</a></li>
+                                        <li><a href="javascript:void(0)">Application form</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Rate Inquiry </a></li>
+                                        <li><a href="javascript:void(0)">Session Summary report </a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" id="start_button" onclick="startDictation(event)">Voice Search</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </header>
+    <!-- header ends here -->
+    <!-- collapse user detail starts here -->
+    <div class="collapse-section">
+        <article class="wrapper">
+            <strong class="collase-icon"></strong>
+            <article class="open-detail">
+                <div class="profile-detail">
+                    <figure class="profile-pic"> <img src="images/profile-pic.png" alt="profile-pic" title="profile-pic" /> </figure>
+                    <div class="user-detail"> <span>Welcome</span> <strong>Andreas Treichl</strong> <em>My Profile</em> </div>
+                </div>
+                <ul class="notifications">
+                    <li>
+                        <a href="transfer-step-1.html">
+                            <figure> <img src="images/transaction-icon.png" alt="Transfer" title="Transfer" /> </figure>
+                            <span>Transfer</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <figure> <img src="images/alert-icon.png" alt="Alert" title="Alert" /> </figure>
+                            <span>5 Alerts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <figure> <img src="images/mail-icon.png" alt="Mail" title="Mail" /> </figure>
+                            <span>1 Email</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <figure> <img src="images/other-icon.png" alt="Others" title="Others" /> </figure>
+                            <span>Others</span>
+                        </a>
+                    </li>
+                    </a>
+                    </li>
+                </ul>
+                <ul class="login-detail">
+                    <li> <span>Last Login</span> <span>16/09/14,  04:13:22</span> </li>
+                    <li> <span>Last Failed Login</span> <span>10/09/14,  04:13:22</span> </li>
+                </ul>
+            </article>
+        </article>
+    </div>
+    <!-- collapse user detail ends here -->
+    <!-- container starts here -->
+    <article class="container">
+        <div class="wrapper">
+            <ul class="bredcum">
+                <li><a href="javascript:void(0)">Dashboard</a></li>
+                <li>Transaction History</li>
+            </ul>
+            <div class="inner-container">
+                <span class="right-side-link"><img src="images/right-section-link.png" /></span>
+                <!-- left section starts here -->
+                <div class="left-section">
+                    <div class="transaction content-block">
+                        <h3>
+                            <strong>Select Account</strong>
+                            <select>
+                                <option>Andreas | AT240011800000000018</option>
+                                <option>Terja  | AT240011800000000019</option>
+                            </select>
+                            <span class="save-as"> Save as <a href="javascript:void(0)" class="exl"></a> <a href="javascript:void(0)" class="pdf"></a> </span>
+                        </h3>
+                        <div class="transaction-detail">
+                            <ul>
+                                <li class="first"> <strong>Account Number</strong> <span>AT240011800000000018</span> </li>
+                                <li> <strong>Account Name</strong> <span>Andreas</span> </li>
+                                <li> <strong>Account Holder</strong> <span>Andreas Treichl</span> </li>
+                                <li> <strong>Available Balance</strong> <span>EUR 200.000,00</span> </li>
+                                <li class="first last"> <strong>BIC/Swift Code</strong> <span>BANKAT00</span> </li>
+                                <li class="last"> <strong>Account Type</strong> <span>GIRO</span> </li>
+                                <li class="last"> <strong>Unclear Balance</strong> <span>EUR 0,00</span> </li>
+                                <li class="last"> <strong>Current Balance</strong> <span>EUR 200.000,00</span> </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content-block transaction-history">
+                        <ul class="search-transaction">
+                            <li>
+                                <label>Search Transaction</label>
+                                <div>
+                                    <input type="radio" name="radio2" />
+                                    <input type="text" name="" value="" />
+                                </div>
+                            </li>
+                            <li>
+                                <label>By Period</label>
+                                <div class="period">
+                                    <input type="radio" name="radio2" />
+                                    <select>
+                                        <option>Last week</option>
+                                        <option>Last month</option>
+                                        <option>Last 3 month</option>
+                                        <option>Last 6 month</option>
+                                        <option>Last 9 month</option>
+                                        <option>Last 1 year</option>
+                                    </select>
+                                    <input name="radio2" type="radio" class="radio-select" checked />
+                                    <label>From</label>
+                                    <input type="text" name="" value="20/08/2014" class="dates" />
+                                    <label>To</label>
+                                    <input type="text" name="" value="28/08/2014" class="dates" />
+                                </div>
+                            </li>
+                            <li>
+                                <input type="button" name="" value="SEARCH" class="primary-button right" />
+                            </li>
+                        </ul>
+                        <p>Note: Historical transactions can only be viewed back 365 days. For transaction details beyond this period, Please call our Customer care or visit your nearest branch.</p>
+                        <table class="finance-table difference-table">
+                            <tr>
+                                <th><a class="sort desc" href="javascript:void(0)">Date</a></th>
+                                <th><a class="sort" href="javascript:void(0)">Type</a></th>
+                                <th><a class="sort" href="javascript:void(0)">Method</a></th>
+                                <th><a class="sort" href="javascript:void(0)">Currency</a></th>
+                                <th><a class="sort" href="javascript:void(0)">Amount</a></th>
+                            </tr>
+                            <tr>
+                                <td>27/08/2014</td>
+                                <td>Withdrawals</td>
+                                <td>ATM</td>
+                                <td>EUR</td>
+                                <td>150,00</td>
+                            </tr>
+                            <tr>
+                                <td>26/08/2014</td>
+                                <td>Deposit</td>
+                                <td>Cheque</td>
+                                <td>EUR</td>
+                                <td>1.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>25/08/2014</td>
+                                <td>Withdrawals</td>
+                                <td>Online transfer</td>
+                                <td>EUR</td>
+                                <td>200,00</td>
+                            </tr>
+                            <tr>
+                                <td>24/08/2014</td>
+                                <td>Withdrawals</td>
+                                <td>Cheque</td>
+                                <td>EUR</td>
+                                <td>350,00</td>
+                            </tr>
+                            <tr>
+                                <td>23/08/2014</td>
+                                <td>Withdrawals</td>
+                                <td>Cheque</td>
+                                <td>EUR</td>
+                                <td>100,00</td>
+                            </tr>
+                            <tr>
+                                <td>22/08/2014</td>
+                                <td>Withdrawals</td>
+                                <td>Online transfer</td>
+                                <td>EUR</td>
+                                <td>250,00</td>
+                            </tr>
+                            <tr>
+                                <td>21/08/2014</td>
+                                <td>Withdrawals</td>
+                                <td>Cheque</td>
+                                <td>EUR</td>
+                                <td>250,00</td>
+                            </tr>
+                            <tr>
+                                <td>20/08/2014</td>
+                                <td>Withdrawals</td>
+                                <td>Cheque</td>
+                                <td>EUR</td>
+                                <td>300,00</td>
+                            </tr>
+                        </table>
+                        <div class="pagination">
+                            <span>page</span> <a href="javascript:void(0)">prev</a>
+                            <select>
+                                <option>1</option>
+                            </select>
+                            <a href="javascript:void(0)">next</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- left section ends here -->
+                <aside>
+                    <!-- right section starts here -->
+                    <ul class="right-section" id="sortable">
+                        <!-- Quick links start here -->
+                        <li class="quick-links content-block ui-state-default">
+                            <h3>
+                                <strong>Quick Links</strong>
+                                <ul class="setting-option">
+                                    <li class="collapse-arrow"></li>
+                                    <li class="setting-link"></li>
+                                </ul>
+                            </h3>
+                            <ul class="quick-link-list hide-section">
+                                <li><a href="javascript:void(0)">Payments</a></li>
+                                <li><a href="javascript:void(0)">Order Status</a></li>
+                                <li><a href="javascript:void(0)">Signature File</a></li>
+                                <li class="last"><a href="javascript:void(0)">E-Statements</a></li>
+                            </ul>
+                        </li>
+                        <!-- calendar start here -->
+                        <li class="calender content-block ui-state-default">
+                            <h3>
+                                <strong>Calendar</strong>
+                                <ul class="setting-option">
+                                    <li class="collapse-arrow"></li>
+                                    <li class="setting-link"></li>
+                                </ul>
+                            </h3>
+                            <div class="hide-section date">
+                                <!-- <span class="calender-image">
+                                              <img src="images/calender-b.jpg" title="calender-b" alt="calender-b"/>
+                                          </span> -->
+                                <div id="datepicker"></div>
+                                <div class="card-payment"> <strong>Credit Card Payment</strong> <span>Due in 3 Days</span> <a href="#" class="primary-button popup">PAY</a> </div>
+                            </div>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </article>
+    <!-- container ends here -->
+    <!-- footer start here -->
+    <footer>
+        <section class="footer">
+            <article class="wrapper">
+                <ul class="footer-links">
+                    <li><a href="javascript:void(0)">About Us</a></li>
+                    <li><a href="javascript:void(0)">Email Us</a></li>
+                    <li><a href="javascript:void(0)">24 X 7 Customer Care</a></li>
+                    <li><a href="javascript:void(0)">Find ATM / Branch</a></li>
+                    <li><a href="javascript:void(0)">View Demo</a></li>
+                    <li><a href="javascript:void(0)">Compliments and Complaints</a></li>
+                    <li><a href="javascript:void(0)">Help</a></li>
+                </ul>
+                <div class="footer-logo">
+                    <figure><img src="images/footer-logo.png" alt="footer-logo" title="footer-logo" /></figure>
+                    <span>© Austrian Global Bank</span>
+                </div>
+            </article>
+        </section>
+    </footer>
+    <!-- mobile fixed footer -->
+    <div class="footer-right-fixed">
+        <ul>
+            <li> <a href="javascript:void(0)"> <img src="images/my-offers.png" alt="my-offers" title="my-offers" /> <span>My Offers</span> </a> </li>
+            <li class="pay"><a href="javascript:void(0)"><img src="images/quick-pay.png" alt="quick-pay" title="quick-pay" /> <span>Quick Pay</span></a></li>
+            <li><a href="javascript:void(0)"><img src="images/calender.png" alt="calender" title="calender" /> <span>Calendar</span></a></li>
+            <li><a href="javascript:void(0)"><img src="images/my-shortcuts.png" alt="my-shortcuts" title="my-shortcuts" /> <span>My Shortcuts</span></a></li>
+            <li><a href="javascript:void(0)"><img src="images/video-chat.png" alt="video-chat" title="video-chat" /> <span>Video Chat</span></a></li>
+        </ul>
+    </div>
+</body>
+</html>

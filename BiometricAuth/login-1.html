@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Austrian Global Bank</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="fonts/font.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui-1.9.2.custom.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/html5shiv.min.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+    <!-- <script type="text/javascript" src="js/modernizr.js"></script>  -->
+    <script type="text/javascript">
+        $('document').ready(function () {
+            $('#loginViaText').click(function () {
+                $(this).css({ "top": "0", "padding": "5px 25px", "bottom": "auto" });
+                $('.login-credentials').slideDown();
+            });
+
+            $('#loginViaText').click(function () {
+                $(this).css({ "top": "0", "padding": "5px 25px", "bottom": "auto" });
+                $('#biometricModelBtns').slideDown();
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- social icon -->
+    <ul class="social-icon">
+        <li class="facebook"><a href="javascript:void(0)">Facebook</a></li>
+        <li class="twitter"><a href="javascript:void(0)">Twitter</a></li>
+        <li class="linked-in"><a href="javascript:void(0)">Linkedin</a></li>
+        <li class="chat"><a href="javascript:void(0)">Chat</a></li>
+        <li class="video-chat"><a href="javascript:void(0)">Video Chat</a></li>
+    </ul>
+    <!-- header starts here -->
+    <header>
+        <section class="header">
+            <div class="wrapper">
+                <a href="javascript:void(0)" class="logo"><img src="images/logo.png" alt="logo" title="logo" /></a>
+                <div class="right-header">
+                    <div class="top-head login-change">
+
+                        <a href="javascript:void(0)" class="language">English</a>
+                        <ul class="language-list">
+                            <li><a href="javascript:void(0)">German</a></li>
+                        </ul>
+                    </div>
+                    <nav>
+                        <span class="menu-link"></span>
+                        <ul class="menu-login">
+                            <li><a href="javascript:void(0)">Personal</a></li>
+                            <li><a href="javascript:void(0)">Privilege</a></li>
+                            <li><a href="javascript:void(0)">Private</a></li>
+                            <li><a href="javascript:void(0)">Corporate </a></li>
+                            <li class="last"><input type="text" class="search-txt" name="" value="Search" onfocus="if(this.value=='Search')this.value=''" onblur="if(this.value=='') this.value='Search'"> </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </header>
+    <!-- header ends here -->
+    <!-- container starts here -->
+    <article class="container">
+        <div class="wrapper">
+            <div class="inner-container">
+                <span class="right-side-link"><img src="images/right-section-link.png" /></span>
+                <!-- login 1 html start -->
+                <!-- login top section start -->
+                <div class="login-top">
+                    <h3>Select Login Options</h3>
+                    <!-- login left section start -->
+                    <div class="login-option">
+                        <ul>
+                            <li>
+                                <figure><img src="images/id-login.png" alt="id-login" title="id-login" /></figure>
+                                <a id="loginViaText">
+                                    <span>User ID &amp; Password</span>
+                                </a>
+                                <form id="loginForm" name="loginForm">
+                                    <div class="login-credentials">
+                                        <ul class="login-section">
+                                            <li>
+                                                <label>User ID</label>
+                                                <input type="text" name="" value="" />
+                                            </li>
+                                            <li>
+                                                <label>Password</label>
+                                                <input type="password" name="" value="" />
+                                                <span class="key-board"><img src="images/key-board.png" alt="key-board" title="key-board" /></span>
+                                            </li>
+                                            <li>
+                                                <label>Start Page</label>
+                                                <select>
+                                                    <option>Dashboard</option>
+                                                    <option>Accounts</option>
+                                                    <option>Payments</option>
+                                                    <option>Investments</option>
+                                                    <option>Products</option>
+                                                    <option>Customer Support</option>
+                                                </select>
+                                            </li>
+                                        </ul>
+                                        <ul class="buttons">
+                                            <input type="hidden" name="behavio_hidden" id="behavio_hidden">
+                                            <input type="submit" id="loginUserSubmit" name="loginUserSubmit" value="Login" class="primary-button" />
+                                        </ul>
+                                        <a href="javascript:void(0)" class="forgot-link">Forgot User ID/Password</a>
+                                    </div>
+                                </form>
+                            </li>
+                            <li class="margin-remove">
+                                <figure><img src="images/biometric-option.png" alt="biometric-option" title="biometric-option" /></figure>
+                                <a href="javascript:void(0)">
+                                    <span>Biometric Model</span>
+                                    <div id="biometricModelBtns">
+                                        <ul class="buttons">
+                                            <input type="button" name="" value="Biometric Authetication" class="primary-button" onclick="location.href = 'biometricEnroll.html'" />
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <figure><img src="images/tac-option.png" alt="tac-option" title="tac-option" /></figure>
+                                <a href="javascript:void(0)">
+                                    <span>TAC SMS</span>
+                                </a>
+                            </li>
+                            <li class="margin-remove">
+                                <figure><img src="images/device-option.png" alt="device-option" title="device-option" /></figure>
+                                <a href="javascript:void(0)">
+                                    <span>Security Token</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- login left section end -->
+                    <!-- login right section start -->
+                    <div class="help-section">
+                        <h6>May I Help You?</h6>
+                        <ul>
+                            <li class="new-user">
+                                <a href="javascript:void(0)">
+                                    <em></em>
+                                    <span>New user?</span>
+                                    <span>Get User ID</span>
+                                </a>
+                            </li>
+                            <li class="request-call">
+                                <a href="javascript:void(0)">
+                                    <em></em>
+                                    <span>Request a call or call us</span>
+                                    <strong>800.999.6000</strong>
+                                </a>
+                            </li>
+                            <li class="service">
+                                <a href="javascript:void(0)">
+                                    <em></em>
+                                    <span>Any query or service request</span>
+                                </a>
+                            </li>
+                            <li class="assistance">
+                                <a href="javascript:void(0)">
+                                    <em></em>
+                                    <span>For any quick assistance do a Video Chat with us !</span>
+                                </a>
+                            </li>
+                            <li class="faq">
+                                <a href="javascript:void(0)">
+                                    <em></em>
+                                    <span>FAQs</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- login right section end -->
+                </div>
+                <!-- login top section end -->
+                <!-- login bottom section start -->
+                <div class="featureList">
+                    <h3>New Features</h3>
+                    <div class="list-links">
+                        <a class="pre"></a>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <figure><img src="images/biometric-device.png" alt="" title="" /></figure>
+                                    <span>Biometric Device</span>
+                                    <p>Use Biometric device for secured authentication</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <figure><img src="images/finance-manager.png" alt="" title="" /></figure>
+                                    <span>Personal Finance Manager</span>
+                                    <p>Use Personal Finance Manager to manage your budget</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <figure><img src="images/bills-notification.png" alt="" title="" /></figure>
+                                    <span>Bills Notifications</span>
+                                    <p>Never miss your bill payments </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <figure><img src="images/interactive-customer.png" alt="" title="" /></figure>
+                                    <span>Interactive Customer Care</span>
+                                    <p>We are here to help you. Reach us anytime anywhere</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <a class="next"></a>
+                    </div>
+                </div>
+                <!-- login bottom section end -->
+                <!-- login 1 html end -->
+            </div>
+        </div>
+    </article>
+    <!-- container ends here -->
+    <!-- footer start here -->
+    <footer>
+        <section class="footer">
+            <article class="wrapper">
+                <ul class="footer-links">
+                    <li><a href="javascript:void(0)">About Us</a></li>
+                    <li><a href="javascript:void(0)">Email Us</a></li>
+                    <li><a href="javascript:void(0)">24 X 7 Customer Care</a></li>
+                    <li><a href="javascript:void(0)">Find ATM / Branch</a></li>
+                    <li><a href="javascript:void(0)">View Demo</a></li>
+                    <li><a href="javascript:void(0)">Compliments and Complaints</a></li>
+                    <li><a href="javascript:void(0)">Help</a></li>
+                </ul>
+                <div class="footer-logo">
+                    <figure><img src="images/footer-logo.png" alt="footer-logo" title="footer-logo" /></figure>
+                    <span>© Austrian Global Bank</span>
+
+                </div>
+            </article>
+        </section>
+    </footer>
+    <!-- mobile fixed footer -->
+    <div class="footer-right-fixed">
+        <ul>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="images/my-offers.png" alt="my-offers" title="my-offers" />
+                    <span>My Offers</span>
+                </a>
+            </li>
+            <li class="pay">
+                <a href="javascript:void(0)">
+                    <img src="images/quick-pay.png" alt="quick-pay" title="quick-pay" />
+                    <span>Quick Pay</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="images/calender.png" alt="calender" title="calender" />
+                    <span>Calendar</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="images/my-shortcuts.png" alt="my-shortcuts" title="my-shortcuts" />
+                    <span>My Shortcuts</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="images/video-chat.png" alt="video-chat" title="video-chat" />
+                    <span>Video Chat</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myLoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;border-color:black">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="window.location.href = 'login-1.html'">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Authenticate Yourself</h4>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li style="margin:10px">
+                            <strong>Your Biometric Behaviour Not Mached. Please authenticate with OTP sent on your registered mobile</strong>
+                        </li>
+                        <li style="margin:40px">
+                            <label>Enter OTP</label>
+                            <input type="text" id="otpTextID" />
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location.href='login-1.html'">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="loginSubmitBtn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
